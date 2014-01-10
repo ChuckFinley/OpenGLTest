@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10B2587187F1D12008E8E4C /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E10B2586187F1D12008E8E4C /* utils.cpp */; };
+		E10B258D187F6D4C008E8E4C /* InitShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E10B258C187F6D4C008E8E4C /* InitShader.cpp */; };
 		E194C5C1187E801F00C022C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E194C5C0187E801F00C022C0 /* main.cpp */; };
 		E194C5C3187E801F00C022C0 /* OpenGLTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E194C5C2187E801F00C022C0 /* OpenGLTest.1 */; };
 		E194C5CA187E806900C022C0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E194C5C9187E806900C022C0 /* OpenGL.framework */; };
@@ -27,8 +29,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E10B2582187F18F2008E8E4C /* Angel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Angel.h; sourceTree = "<group>"; };
+		E10B2584187F1926008E8E4C /* vec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec.h; path = OpenGLTest/vec.h; sourceTree = SOURCE_ROOT; };
+		E10B2585187F1CAB008E8E4C /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		E10B2586187F1D12008E8E4C /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		E10B258B187F63AB008E8E4C /* mat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mat.h; sourceTree = "<group>"; };
+		E10B258C187F6D4C008E8E4C /* InitShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InitShader.cpp; sourceTree = "<group>"; };
+		E10B258E187F713D008E8E4C /* fshader21.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fshader21.glsl; sourceTree = "<group>"; };
+		E10B258F187F713D008E8E4C /* vshader21.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vshader21.glsl; sourceTree = "<group>"; };
 		E194C5BD187E801F00C022C0 /* OpenGLTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLTest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E194C5C0187E801F00C022C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E194C5C0187E801F00C022C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/maxczapanskiy/Projects/CSE457/OpenGLTest/OpenGLTest/main.cpp; sourceTree = "<absolute>"; };
 		E194C5C2187E801F00C022C0 /* OpenGLTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = OpenGLTest.1; sourceTree = "<group>"; };
 		E194C5C9187E806900C022C0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		E194C5CB187E806E00C022C0 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -68,8 +78,16 @@
 		E194C5BF187E801F00C022C0 /* OpenGLTest */ = {
 			isa = PBXGroup;
 			children = (
+				E10B258E187F713D008E8E4C /* fshader21.glsl */,
+				E10B258F187F713D008E8E4C /* vshader21.glsl */,
+				E10B258C187F6D4C008E8E4C /* InitShader.cpp */,
+				E10B258B187F63AB008E8E4C /* mat.h */,
+				E10B2584187F1926008E8E4C /* vec.h */,
+				E10B2582187F18F2008E8E4C /* Angel.h */,
 				E194C5C0187E801F00C022C0 /* main.cpp */,
 				E194C5C2187E801F00C022C0 /* OpenGLTest.1 */,
+				E10B2585187F1CAB008E8E4C /* utils.h */,
+				E10B2586187F1D12008E8E4C /* utils.cpp */,
 			);
 			path = OpenGLTest;
 			sourceTree = "<group>";
@@ -126,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E194C5C1187E801F00C022C0 /* main.cpp in Sources */,
+				E10B258D187F6D4C008E8E4C /* InitShader.cpp in Sources */,
+				E10B2587187F1D12008E8E4C /* utils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +223,11 @@
 		E194C5C7187E801F00C022C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/maxczapanskiy/Projects/CSE457/OpenGLTest,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -210,6 +235,11 @@
 		E194C5C8187E801F00C022C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/maxczapanskiy/Projects/CSE457/OpenGLTest,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -233,6 +263,7 @@
 				E194C5C8187E801F00C022C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
