@@ -37,6 +37,7 @@
 		E10B258C187F6D4C008E8E4C /* InitShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InitShader.cpp; sourceTree = "<group>"; };
 		E10B258E187F713D008E8E4C /* fshader21.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fshader21.glsl; sourceTree = "<group>"; };
 		E10B258F187F713D008E8E4C /* vshader21.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vshader21.glsl; sourceTree = "<group>"; };
+		E1582586187F7E0A00A14D1E /* thoughts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thoughts.txt; sourceTree = "<group>"; };
 		E194C5BD187E801F00C022C0 /* OpenGLTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E194C5C0187E801F00C022C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = /Users/maxczapanskiy/Projects/CSE457/OpenGLTest/OpenGLTest/main.cpp; sourceTree = "<absolute>"; };
 		E194C5C2187E801F00C022C0 /* OpenGLTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = OpenGLTest.1; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		E194C5B4187E801F00C022C0 = {
 			isa = PBXGroup;
 			children = (
+				E1582586187F7E0A00A14D1E /* thoughts.txt */,
 				E194C5CB187E806E00C022C0 /* GLUT.framework */,
 				E194C5C9187E806900C022C0 /* OpenGL.framework */,
 				E194C5BF187E801F00C022C0 /* OpenGLTest */,

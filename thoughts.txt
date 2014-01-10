@@ -1,0 +1,37 @@
+The full list of all the shit that has to happen to draw to the screen:
+
+1. Include OpenGL/gl.h, OpenGL/glu.h, GLUT/glut.h, glew?
+2. Interaction with window system:
+	a. glutInit - initiates interaction between windowing system and OpenGL
+	b. glutInitDisplayMode
+		I. GLUT_RGB rather than GLUT_INDEX
+		II. GLUT-DEPTH for buffer for hidden-surface removal?
+		III. GLUT_DOUBLE for double buffering rather than single
+	c. glutInitWindowSize
+	d. glutInitWindowPosition
+	e. glutCreateWindow
+3. glewInit?
+4. glutDisplayFunc - sets the display callback which gets called whenever the window needs to be redrawn (e.g. during init)
+	a. glutKeyboardFunc/glutMouseFunc - set display callbacks for mouse and keyboard events
+5. init - set your crap up. For Sierpinski Gasket this is the meat of the program.
+	a. Create the points and put them in an array (see: point3 points[NumPoints];)
+	b. vertex-array object - bundle data associated with vertex array
+		I. glGenVertexArray - get unused name for buffer
+		II. glBindVertexArray - creates object
+		III. NOTE: On Mac use glGenVertexArrayAPPLE and glBindVertexArrayAPPLE
+	c. buffer object - create buffer on GPU and put our data in it
+		I. glGenBuffers - generate buffer object name
+		II. glBindBuffer - creates buffer. GL_ARRAY_BUFFER indicates data in buffer will be vertex attrib data (other types to follow in future)
+		III. glBufferData - actually puts data into the buffer
+6. shaders
+	a. vertex shader - passes vertex location to rasterizer (see vshader21.glsl)
+	b. fragment shader - passes vertex color to rasterizer (see fshader21.glsl)
+	c. 2.5.3 discusses setting color attributes. when do we set this in shaders vs. init?
+	d. initShader
+		I. create program object with shaders
+		II. enable attributes - glGetAttribLocation, glEnableVertexAttribArray, glVertexAttribPointer
+7. render points - glBufferData triggers display callback?
+	a. glClear - start with a clean slate
+	b. glDrawArrays - the data we pushed to the GPU in glBufferData now gets rendered on the screen
+	c. glFlush - ensures data renders right away
+8. glutMainLoop - starts the event-processing loop
